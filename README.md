@@ -4,6 +4,8 @@ En este repositorio podemos encontrar dos proyectos construidos sobre ASP.NET 5.
 
 ## Grabación de la sesión con la explicación 
 
+![](https://i.ibb.co/xs0Y47Z/CP-Web-API.png)
+
 **Video:** [youtu.be/vUG0JwMCU5Y](https://youtu.be/vUG0JwMCU5Y).
 
 ## Autor
