@@ -1,0 +1,54 @@
+﻿@viewModel App.PL.ViewModels.CRUD.CreateViewModel, App.PL
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <div class="page-center">
+        <dot:RouteLink RouteName="Default" Text="Go back" class="page-button btn-back btn-long" />
+        
+        
+        <div class="page-box">
+            <h1>Crear</h1>
+            <div Validator.Value="{value: Pelicula.Nombre}"
+                 Validator.InvalidCssClass="has-error"
+                 Validator.SetToolTipText="true"
+                 class="page-input-box">
+                Nombre:
+                <dot:TextBox Text="{value: Pelicula.Nombre}" class="page-input" />
+            </div>
+
+            <div Validator.Value="{value: Pelicula.DuracionMinutos}"
+                 Validator.InvalidCssClass="has-error"
+                 Validator.SetToolTipText="true"
+                 class="page-input-box">
+                Duración minutos:
+                <dot:TextBox Text="{value: Pelicula.DuracionMinutos}" class="page-input" />
+            </div>
+
+            <div Validator.Value="{value: Pelicula.FechaEstreno}"
+                 Validator.InvalidCssClass="has-error"
+                 Validator.SetToolTipText="true"
+                 class="page-input-box">
+                Fecha estreno:
+                <dot:TextBox Text="{value: Pelicula.FechaEstreno}"
+                             ValueType="DateTime"
+                             FormatString="dd/MM/yyyy"
+                             class="page-input" />
+            </div>
+
+            <div Validator.Value="{value: Pelicula.Sinopsis}"
+                 Validator.InvalidCssClass="has-error"
+                 Validator.SetToolTipText="true"
+                 class="page-input-box">
+                Sinopsis:
+                <dot:TextBox Text="{value: Pelicula.Sinopsis}" Type="MultiLine" class="page-input" />
+            </div>
+
+            <div class="btn-container">
+                <dot:Button Text="Guardar" Click="{command: AddPelicula()}" class="page-button" />
+            </div>
+        </div>
+    </div>
+
+</dot:Content>
+

@@ -1,0 +1,28 @@
+﻿@viewModel App.PL.ViewModels.DefaultViewModel, App.PL
+@masterPage Views/MasterPage.dotmaster
+<dot:Content ContentPlaceHolderID="MainContent">
+
+	<div class="page-center">
+		<div class="page-grid-top">
+			<div class="student-image"></div>
+			<h1>Listado de películas</h1>
+
+			<dot:RouteLink Text="Nueva pelicula" RouteName="CRUD_Create" class="page-button btn-add btn-long" />
+
+		</div>
+		<dot:GridView DataSource="{value: Peliculas}" class="page-grid">
+			<Columns>
+				<dot:GridViewTextColumn ValueBinding="{value: IdPelicula}" HeaderText="Id" />
+				<dot:GridViewTextColumn ValueBinding="{value: Nombre}" HeaderText="Nombre" />
+				<dot:GridViewTextColumn ValueBinding="{value: FechaEstreno}" HeaderText="Fecha estreno" />
+				<dot:GridViewTemplateColumn>
+					<dot:RouteLink Text="Detail" RouteName="CRUD_Detail" Param-Id="{{value: IdPelicula}}" />
+				</dot:GridViewTemplateColumn>
+			</Columns>
+			<EmptyDataTemplate>
+				No hay películas registradas. Por favor, añade algunas películas.
+			</EmptyDataTemplate>
+		</dot:GridView>
+	</div>
+
+</dot:Content>
